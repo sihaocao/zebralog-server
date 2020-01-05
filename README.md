@@ -1,26 +1,40 @@
-# Express Boilerplate!
+<img src='screenshots/main-page.png'>
 
-This is a boilerplate project used for starting new projects!
+# Zebralogs -- web application
+* Zebralogs allows any sports official to track one's contest information along with the ability to export the list of entries.
 
-## Set up
+## App Description
+* Zebralogs is a full-stack web app built with React, CSS, Node, Express, and Postgresql. This website does not use any third-party API. This website is supported on Chrome, Firefox, and Safari. This app is a fully responsive website.
 
-Complete the following steps to start a new project (NEW-PROJECT-NAME):
+## Built with
+* Node
+* Express
+* PostgreSQL
 
-1. Clone this repository to your local machine `git clone BOILERPLATE-URL NEW-PROJECTS-NAME`
-2. `cd` into the cloned repository
-3. Make a fresh start of the git history for this project with `rm -rf .git && git init`
-4. Install the node dependencies `npm install`
-5. Move the example Environment file to `.env` that will be ignored by git and read by the express server `mv example.env .env`
-6. Edit the contents of the `package.json` to use NEW-PROJECT-NAME instead of `"name": "express-boilerplate",`
+## Endpoints
+### /zebralogs
+* `GET /api/zebralogs`
+Returns an array of entries.
+* `GET /api/zebralogs/:zebralog_id`
+Returns an entry whose id matches :zebralog_id.
+* `POST /api/zebralogs`
+Verifies input and adds a new entry to the database if valid.
+* `PATCH /api/zebralogs/:zebralog_id`
+Updates input of an existing entry if valid.
+* `DELETE /api/zebralogs/:zebralog_id`
+Deletes an entry from the database.
+
+## Setting Up
+* Install dependencies: `npm install`
+* Create development and test databases: `createdb zebralogs`, `createdb zebralogs-test`
+* Create database user: `createuser zebralogs_user`
+* Bootstrap development database: `zebralogs npm run migrate`
+* Bootstrap test database: `zebralogs-test npm run migrate`
+
+## Sample Data
+* To seed the database for development: `psql -U zebralogs_user -d zebralogs -f seeds/seed.zebralog.sql`
+* To clear seed data: `psql -U zebralogs_user -d zebralogs -f seeds/trunc.zebralog.sql`
 
 ## Scripts
-
-Start the application `npm start`
-
-Start nodemon for the application `npm run dev`
-
-Run the tests `npm test`
-
-## Deploying
-
-When your new project is ready for deployment, add a new Heroku application with `heroku create`. This will make a new git remote called "heroku" and you can then `npm run deploy` which will push to this remote's master branch.
+* Start application for development: npm run dev
+* Run tests: npm test
