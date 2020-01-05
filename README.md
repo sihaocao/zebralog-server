@@ -14,14 +14,23 @@
 ## Endpoints
 ### /zebralogs
 * `GET /api/zebralogs`
+
 Returns an array of entries.
+
 * `GET /api/zebralogs/:zebralog_id`
-Returns an entry whose id matches :zebralog_id.
+
+Returns an entry whose id matches `:zebralog_id`.
+
 * `POST /api/zebralogs`
+
 Verifies input and adds a new entry to the database if valid.
+
 * `PATCH /api/zebralogs/:zebralog_id`
+
 Updates input of an existing entry if valid.
+
 * `DELETE /api/zebralogs/:zebralog_id`
+
 Deletes an entry from the database.
 
 ## Setting Up
@@ -36,5 +45,5 @@ Deletes an entry from the database.
 * To clear seed data: `psql -U zebralogs_user -d zebralogs -f seeds/trunc.zebralog.sql`
 
 ## Scripts
-* Start application for development: npm run dev
-* Run tests: npm test
+* Start application for development: `npm run dev`
+* Run tests: `npm test`
