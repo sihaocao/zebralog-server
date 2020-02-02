@@ -6,6 +6,9 @@
 ## App Description
 * Zebralogs is a full-stack web app built with React, CSS, Node, Express, and Postgresql. This website does not use any third-party API. This website is supported on Chrome, Firefox, and Safari. This app is a fully responsive website.
 
+## Client-side Code
+* [ZebraLogs Client](https://github.com/sihaocao/zebralog-client)
+
 ## Built with
 * Node
 * Express
